@@ -4,7 +4,7 @@
 #include <set>
 
 
-std::set<std::string> permutate(std::string query)
+std::set<std::string> permutate(std::string query, size_t length)
 {
     std::string str;
 
@@ -14,7 +14,7 @@ std::set<std::string> permutate(std::string query)
 
     do
     {
-        str = query.substr(0, 4);
+        str = query.substr(0, length);
         arr.insert(str);
     }
 
@@ -30,7 +30,7 @@ int main()
 
     std::cin >> query;
 
-    for(auto i : permutate(query))
+    for(auto i : permutate(query, 4))
     {
         std::cout << i << std::endl;
     }
